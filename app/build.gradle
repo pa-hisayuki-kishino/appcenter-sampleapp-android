@@ -4,11 +4,11 @@ android {
 
     signingConfigs {
 
-        renraku {
-            keyAlias 'Renraku-android'
-            keyPassword '#Renraku!23#'
-            storeFile file('./src/main/Renraku-android.jks')
-            storePassword '#Renraku!23#'
+        devIntune {
+//            keyAlias 'Renraku-android'
+//            keyPassword '#Renraku!23#'
+//            storeFile file('./src/main/Renraku-android.jks')
+//            storePassword '#Renraku!23#'
         }
 
         debugConfig {
@@ -31,9 +31,9 @@ android {
     }
 
     productFlavors {
-        renraku {
-            applicationId "net.phoneappli.renraku"
-            signingConfig signingConfigs.renraku
+        devIntune {
+            applicationId "net.phoneappli.devIntune"
+//            signingConfig signingConfigs.devIntune
         }
     }
 
