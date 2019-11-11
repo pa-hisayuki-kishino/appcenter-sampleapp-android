@@ -1,6 +1,24 @@
 apply plugin: 'com.android.application'
 
 android {
+
+    signingConfigs {
+
+        renraku {
+            keyAlias 'Renraku-android'
+            keyPassword '#Renraku!23#'
+            storeFile file('./src/main/Renraku-android.jks')
+            storePassword '#Renraku!23#'
+        }
+
+        debugConfig {
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+            storeFile file('../debug.keystore')
+            storePassword 'android'
+        }
+    }
+
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
@@ -11,6 +29,16 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    productFlavors {
+        renraku {
+            applicationId "net.phoneappli.renraku"
+            signingConfig signingConfigs.renraku
+        }
+    }
+
+    flavorDimensions "phoneappli"
+
     buildTypes {
         release {
             minifyEnabled false
